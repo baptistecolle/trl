@@ -815,7 +815,7 @@ class SFTTrainer(Trainer):
             # For Liger kernel, ensure only the essential columns
             if args.use_liger_kernel:
                 dataset = dataset.select_columns(
-                    {"input_ids", "seq_lengths", "completion_mask"}.intersection(dataset.column_names)
+                    {"input_ids", "seq_lengths", "completion_mask", "assistant_masks"}.intersection(dataset.column_names)
                 )
 
         return dataset
